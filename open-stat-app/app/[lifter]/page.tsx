@@ -1,9 +1,11 @@
 import React from 'react'
 
-const Lifter = () => {
+const lifter = () => {
   return (
-    <div>Lifter</div>
+    <>
+    lifter
+    </>
   )
 }
 
-export default Lifter
+export default lifter;

@@ -55,7 +55,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 export default function SearchAppBar() {
   return (
     <Box sx={{ flexGrow: 1 }} >
-      <AppBar position="static" sx={{ bgcolor: 'red' }}>
+      <AppBar position="static" sx={{ bgcolor: '#F83315' }}>
         <Toolbar>
           <Link href='/home'>
             <Image src="/openstatlogo.png" alt="OpenStat Logo" width={75} height={75} />

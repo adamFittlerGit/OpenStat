@@ -16,7 +16,7 @@
     "@supabase/supabase-js": "^2.41.1",
     "chart.js": "^4.4.2",
     "dotenv": "^16.4.5",
-    "next": "14.1.4",
+    "next": "^14.2.3",
     "react": "^18",
     "react-chartjs-2": "^5.2.0",
     "react-dom": "^18"

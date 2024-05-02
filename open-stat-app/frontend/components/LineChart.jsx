@@ -2,7 +2,7 @@
 import { useRef, useEffect } from "react";
 import { Chart } from "chart.js/auto";
 
-export default function LineChart() {
+export default function LineChart(props) {
     const chartRef = useRef(null)
 
 
@@ -16,21 +16,15 @@ export default function LineChart() {
 
             const newChart = new Chart(context, {
                 type: "line",
-                data: {
-                    labels: ["MON", "TUE", "WED", "THURS", "FRI"],
-                    datasets: [
-                        {
-                            data: [34, 64, 50, 1, 4],
-                            backgroundColor: "black",
-                            borderColor: "red",
-                            borderWidth: 1,
-                        }
-                    ]
-                },
+                data: props.data,
                 options: {
                     plugins:{
                         legend: {
                          display: false
+                        },
+                        title: {
+                            text: props.title,
+                            display: true
                         }
                     },
                     responsive: true,
@@ -47,7 +41,7 @@ export default function LineChart() {
 
             chartRef.current.chart = newChart
         }
-    }, [])
+    }, [props.data, props.title])
 
     return <div>
         <canvas ref={chartRef}/>

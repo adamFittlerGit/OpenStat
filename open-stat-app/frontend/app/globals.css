@@ -10,6 +10,10 @@
 
 .chartContainer {
   width: 100%; /* Adjust width as needed */
-  padding: 50px 200px;
+  padding: 50px 100px;
   margin: 0 auto;
+}
+
+.chart {
+
 }

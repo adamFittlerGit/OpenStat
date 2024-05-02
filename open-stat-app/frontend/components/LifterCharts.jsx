@@ -1,5 +1,5 @@
 'use client';
-import LineChart from "../../components/LineChart";
+import LineChart from "./LineChart";
 import { useEffect } from "react";
 
 function useReloadOnResize() {
@@ -16,7 +16,7 @@ function useReloadOnResize() {
   }, []);
 }
 
-const page = () => {
+const LifterCharts = (props) => {
   
   useReloadOnResize();
 
@@ -24,10 +24,10 @@ const page = () => {
       <div className="chartContainer">
         <LineChart 
           data = {{
-            labels: ["MON", "TUE", "WED", "THURS", "FRI"],
+            labels: props.labels,
             datasets: [
                 {
-                    data: [20, 30, 40, 50, 60],
+                    data: props.squat_data,
                     backgroundColor: "black",
                     borderColor: "red",
                     borderWidth: 1
@@ -38,10 +38,10 @@ const page = () => {
           />
         <LineChart 
           data = {{
-            labels: ["MON", "TUE", "WED", "THURS", "FRI"],
+            labels: props.labels,
             datasets: [
                 {
-                    data: [20, 30, 40, 50, 60],
+                    data: props.bench_data,
                     backgroundColor: "black",
                     borderColor: "green",
                     borderWidth: 1
@@ -52,10 +52,10 @@ const page = () => {
           />
         <LineChart 
           data = {{
-            labels: ["MON", "TUE", "WED", "THURS", "FRI"],
+            labels: props.labels,
             datasets: [
                 {
-                    data: [20, 30, 40, 50, 60],
+                    data: props.dead_data,
                     backgroundColor: "black",
                     borderColor: "blue",
                     borderWidth: 1
@@ -68,4 +68,4 @@ const page = () => {
   );
 };
 
-export default page
+export default LifterCharts

@@ -1,11 +1,10 @@
-import BarChart from "../components/BarChart";
+import LineChart from "../components/LineChart";
 
 export default function Home() {
   return (
-    <div className="container">
-      Chart js
+    <div className="chartContainer">
       <div>
-        <BarChart></BarChart>
+        <LineChart></LineChart>
       </div>
     </div>
   )

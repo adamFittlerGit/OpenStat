@@ -104,6 +104,13 @@ best_estimator_info = f"Best Estimator: {opt.best_estimator_}\n"
 best_mse_info = f"Best MSE: {-opt.best_score_}\n"  # Convert back from negative MSE
 test_r2 = opt.best_estimator_.score(X_test, y_test)
 test_r2_info = f"Test R^2 score: {test_r2}\n"
+
+print("---- Saving Model ----\n")
+# ---- Save the Model ---- 
+joblib.dump(opt.best_estimator_, '../models/xgb_model_squat.pkl')
+joblib.dump(encoder, '../encoders/encoder_squat.pkl')
+joblib.dump(scaler, '../scalers/scaler_squat.pkl')
+
 # Save the printed variables in model_info.txt
 with open('../info/stats/model_info_squat.txt', 'w') as f:
     f.write(best_estimator_info)
@@ -166,5 +173,3 @@ plt.savefig('../info/graphs/squat/error_distribution.png')
 plt.close()
 
 
-# ---- Save the Model ---- 
-joblib.dump(opt.best_estimator_, '../models/xgb_model_squat.pkl')

@@ -18,5 +18,3 @@ Best Estimator: Pipeline(steps=[('scaler', StandardScaler()),
                               num_parallel_tree=None, random_state=420, ...))])
 Best MSE: 114.57697227722608
 Test R^2 score: 0.9530232159300852
-Test MSE: 137.52059149997265
-Test R^2: 0.9530232159300852

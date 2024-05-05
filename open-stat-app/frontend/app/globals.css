@@ -2,18 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+
+.contentContainer {
+  padding: 50px 100px;
 }
 
 .chartContainer {
-  width: 100%; /* Adjust width as needed */
-  padding: 50px 100px;
-  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px; /* Gap between grid items */
 }
 
-.chart {
-
+.chartChild {
+  background-color: rgba(246, 237, 237, 0.997);
+  padding: 20px;
+  text-align: center;
 }

@@ -43,7 +43,7 @@ export default function LineChart(props) {
         }
     }, [props.data, props.title])
 
-    return <div>
+    return <div className="chartChild">
         <canvas ref={chartRef}/>
     </div>
 }

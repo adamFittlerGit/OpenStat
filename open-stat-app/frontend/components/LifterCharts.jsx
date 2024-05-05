@@ -64,6 +64,20 @@ const LifterCharts = (props) => {
           }}
           title = "Deadlift" 
           />
+          <LineChart 
+          data = {{
+            labels: props.labels,
+            datasets: [
+                {
+                    data: props.total_data,
+                    backgroundColor: "black",
+                    borderColor: "yellow",
+                    borderWidth: 1
+                }
+            ]
+          }}
+          title = "Total" 
+          />
       </div>
   );
 };

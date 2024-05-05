@@ -1,6 +1,5 @@
 import { supabase } from '../../../lib/supabase';
 import LifterCharts  from '../../../components/LifterCharts';
-import LineChart from '../../../components/LineChart';
 
 export default async function LifterPage({params}) {
   const name = params.name.replace(/([a-z])([A-Z])/g, '$1 $2');
@@ -69,7 +68,8 @@ export default async function LifterPage({params}) {
       const squatPredictionResponse = await fetch('http://127.0.0.1:5000//predict/squat', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
+          'Cache-Control': 'no-cache'
         },
         body: JSON.stringify( squat_features )
       });
@@ -110,10 +110,13 @@ export default async function LifterPage({params}) {
   const squat_data = realdata.map((row) => row.Squat);
   const bench_data = realdata.map((row) => row.Bench);
   const dead_data = realdata.map((row) => row.Deadlift);
+  const total_data = realdata.map((row) => row.Total);
   
   return (
     <>
-        <LifterCharts labels={labels} squat_data={squat_data} bench_data={bench_data} dead_data={dead_data}/>
+      <div className='contentContainer'>
+        <LifterCharts labels={labels} squat_data={squat_data} bench_data={bench_data} dead_data={dead_data} total_data={total_data}/>
+      </div>
     </>
   );
 };

@@ -7,7 +7,9 @@ export default async function Home() {
     const { data, error } = await supabase
       .from("Lifter_Info")
       .select("Name")
+      .eq("Event", "SBD")
       .order('Date', { ascending: false });
+      
 
     if (data) {
       return data; // Return the data array

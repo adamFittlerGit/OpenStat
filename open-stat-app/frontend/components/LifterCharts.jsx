@@ -28,9 +28,10 @@ const LifterCharts = (props) => {
             datasets: [
                 {
                     data: props.squat_data,
-                    backgroundColor: "black",
-                    borderColor: "red",
-                    borderWidth: 1
+                    backgroundColor: ["red", "red" , "red" , "red", "red", "red", "red", "red", "red", "red", "red", "red", "red", "red", "red", "red", "red", "red", "red", "red", "red", "red", "red","red", "red", "red", "white", "white", "white"],
+                    borderColor: "black",
+                    borderWidth: 1,
+                    tension: 0.2
                 }
             ]
           }}
@@ -43,8 +44,9 @@ const LifterCharts = (props) => {
                 {
                     data: props.bench_data,
                     backgroundColor: "black",
-                    borderColor: "green",
-                    borderWidth: 1
+                    borderColor: "black",
+                    borderWidth: 1,
+                    tension: 0.2
                 }
             ]
           }}
@@ -57,8 +59,9 @@ const LifterCharts = (props) => {
                 {
                     data: props.dead_data,
                     backgroundColor: "black",
-                    borderColor: "blue",
-                    borderWidth: 1
+                    borderColor: "black",
+                    borderWidth: 1,
+                    tension: 0.2
                 }
             ]
           }}
@@ -71,7 +74,7 @@ const LifterCharts = (props) => {
                 {
                     data: props.total_data,
                     backgroundColor: "black",
-                    borderColor: "yellow",
+                    borderColor: "black",
                     borderWidth: 1
                 }
             ]

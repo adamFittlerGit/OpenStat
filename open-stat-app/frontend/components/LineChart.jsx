@@ -33,7 +33,7 @@ export default function LineChart(props) {
                             type: "category"
                         },
                         y: {
-                            beginAtZero: true
+                            beginAtZero: false
                         }
                     }
                 }

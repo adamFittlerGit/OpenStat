@@ -7,6 +7,16 @@
   padding: 50px 100px;
 }
 
+.tableContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.cellHeader {
+  background: #F83315;
+  color: white;
+}
+
 .chartContainer {
 
   display: grid;

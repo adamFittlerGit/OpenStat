@@ -1,6 +1,5 @@
 import { supabase } from '../../../lib/supabase';
 import LifterCharts  from '../../../components/LifterCharts';
-import { computeOffsetLeft } from '@mui/x-data-grid/hooks/features/virtualization/useGridVirtualScroller';
 
 export default async function LifterPage({params}) {
   const name = params.name.replace(/([a-z])([A-Z])/g, '$1 $2');
@@ -102,6 +101,7 @@ export default async function LifterPage({params}) {
         body: JSON.stringify( bench_features )
       });
       const benchPrediction = await benchPredictionResponse.json();
+      console.log(benchPrediction.result);
   
 
       const deadliftPredictionResponse = await fetch('http://127.0.0.1:5000//predict/deadlift', {

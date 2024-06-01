@@ -9,7 +9,20 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import InputBase from '@mui/material/InputBase';
 import SearchIcon from '@mui/icons-material/Search';
-import { useRouter } from 'next/navigation'; // Import useRouter hook
+import { useRouter } from 'next/navigation'; 
+import Button from '@mui/material/Button';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+
+const theme = createTheme({
+  palette: {
+    black: {
+      main: '#3d3d3b',
+      light: '#3d3d3b',
+      dark: '#3d3d3b',
+      contrastText: 'white'
+    },
+  },
+});
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -67,10 +80,16 @@ function SearchAppBar() {
     <Box sx={{ flexGrow: 1 }} >
       <AppBar position="static" sx={{ bgcolor: '#F83315' }}>
         <Toolbar>
-          <Link href='/home'>
+          <Link href='/'>
             <Image src="/openstatlogo.png" alt="OpenStat Logo" width={75} height={75} />
           </Link>
-          <Typography variant="h6" noWrap component="div" sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}></Typography>
+          <ThemeProvider theme={theme}>
+            <Link href='/lifters'>
+              <Button variant="contained" color="black"> All Lifters</Button>
+            </Link>
+          </ThemeProvider>
+
+          <Typography variant="h6" noWrap component="div" sx={{ flexGrow: 1, display: { xs: 'block', sm: 'block' } }}></Typography>
           {/* Wrap the Search component in a form tag or ensure it renders as a form */}
           <form onSubmit={handleSearchSubmit}>
             <Search>

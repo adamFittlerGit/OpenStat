@@ -51,7 +51,7 @@ print(df.shape)
 df.head()
 df = df.dropna()
 # Assuming df is your DataFrame
-df = df[(df['Deadlift_1'] != 0.0) & (df['Deadlift_2'] != 0.0) & (df['Deadlift_3'] != 0.0) & (df['Deadlift_1'] <= df['Deadlift_2']) & (df['Deadlift_2'] <= df['Deadlift_3'])]
+df = df[(df['Deadlift_1'] != 0.0) & (df['Deadlift_2'] != 0.0) & (df['Deadlift_3'] != 0.0)]
 print(df.shape)
         
 df['Sex'] = df['Sex'].astype('Int64')

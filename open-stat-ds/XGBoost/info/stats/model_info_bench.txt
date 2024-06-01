@@ -1,20 +1,19 @@
 Best Estimator: Pipeline(steps=[('scaler', StandardScaler()),
                 ('xgb',
                  XGBRegressor(base_score=None, booster=None, callbacks=None,
-                              colsample_bylevel=1.0,
-                              colsample_bynode=0.7984367810936983,
-                              colsample_bytree=0.9209633277962022, device=None,
-                              early_stopping_rounds=None,
+                              colsample_bylevel=0.9734393377070643,
+                              colsample_bynode=1.0, colsample_bytree=1.0,
+                              device=None, early_stopping_rounds=None,
                               enable_categorical=False, eval_metric=None,
-                              feature_types=None, gamma=2.7559362503119256,
-                              grow_policy=None, importance_type=None,
+                              feature_types=None, gamma=5.0, grow_policy=None,
+                              importance_type=None,
                               interaction_constraints=None,
-                              learning_rate=0.025116732460951977, max_bin=None,
+                              learning_rate=0.026784785220852283, max_bin=None,
                               max_cat_threshold=None, max_cat_to_onehot=None,
-                              max_delta_step=None, max_depth=6, max_leaves=None,
+                              max_delta_step=None, max_depth=3, max_leaves=None,
                               min_child_weight=None, missing=nan,
                               monotone_constraints=None, multi_strategy=None,
                               n_estimators=500, n_jobs=None,
                               num_parallel_tree=None, random_state=420, ...))])
-Best MSE: 114.57697227722608
-Test R^2 score: 0.9530232159300852
+Best MSE: 320.6287640976954
+Test R^2 score: 0.887747584811524

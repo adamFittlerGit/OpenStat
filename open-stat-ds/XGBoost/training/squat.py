@@ -28,9 +28,10 @@ for col in df.columns:
         # Fill missing values with mode for categorical columns
         col_mode = df[col].mode()[0]
         df[col] = df[col].fillna(col_mode)
-encoder = LabelEncoder() 
-df['Sex'] = encoder.fit_transform(df['Sex'])
-df['Equiptment'] = encoder.fit_transform(df['Equiptment'])
+sex_encoder = LabelEncoder() 
+equipt_encoder = LabelEncoder()
+df['Sex'] = sex_encoder.fit_transform(df['Sex'])
+df['Equiptment'] = equipt_encoder.fit_transform(df['Equiptment'])
 print(df.head())
 
 print("---- Formatting Data ----\n")
@@ -51,7 +52,7 @@ print(df.shape)
 df.head()
 df = df.dropna()
 # Assuming df is your DataFrame
-df = df[(df['Squat_1'] != 0.0) & (df['Squat_2'] != 0.0) & (df['Squat_3'] != 0.0) & (df['Squat_1'] <= df['Squat_2']) & (df['Squat_2'] <= df['Squat_3'])]
+df = df[(df['Squat_1'] != 0.0) & (df['Squat_2'] != 0.0) & (df['Squat_3'] != 0.0)]
 print(df.shape)
         
 df['Sex'] = df['Sex'].astype('Int64')
@@ -108,7 +109,8 @@ test_r2_info = f"Test R^2 score: {test_r2}\n"
 print("---- Saving Model ----\n")
 # ---- Save the Model ---- 
 joblib.dump(opt.best_estimator_, '../models/xgb_model_squat.pkl')
-joblib.dump(encoder, '../encoders/encoder_squat.pkl')
+joblib.dump(sex_encoder, '../encoders/sex_encoder.pkl')
+joblib.dump(equipt_encoder, '../encoders/equipt_encoder.pkl')
 joblib.dump(scaler, '../scalers/scaler_squat.pkl')
 
 # Save the printed variables in model_info.txt

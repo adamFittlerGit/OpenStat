@@ -9,7 +9,8 @@ export default function DataGridDemo(props) {
     '& .super-app-theme--header': {
       backgroundColor: 'rgba(255, 7, 0, 0.55)',
     }, }}>
-      <DataGrid
+      <DataGrid 
+        disableColumnMenu={true}
         rows={props.rows}
         columns={props.columns}
         initialState={{
